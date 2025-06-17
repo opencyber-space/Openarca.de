@@ -1,0 +1,6 @@
+Flask
+pymongo
+python-dotenv
+dataclasses-json
+nats-py
+uuid
