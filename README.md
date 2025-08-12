@@ -3,6 +3,21 @@
 **A modular backend for orchestrating structured bidding, social voting, and task delegation workflows.**
 DSL-configurable, event-driven, and designed for distributed multi-agent systems.
 
+### Project Status 🚧
+
+* **Alpha**: This project is in active development and subject to rapid change. ⚠️
+* **Testing Phase**: Features are experimental; expect bugs, incomplete functionality, and breaking changes. 🧪
+* **Not Production-Ready**: We **do not recommend using this in production** (or relying on it) right now. ⛔
+* **Compatibility**: APIs, schemas, and configuration may change without notice. 🔄
+* **Feedback Welcome**: Early feedback helps us stabilize future releases. 💬
+
+---
+
+## 📚 Contents 
+
+* [Voting System](https://openarcade-internal.pages.dev/social-choice-voting/social-choice-voting)
+* [Bidding System](https://openarcade-internal.pages.dev/bids-system/bidding)
+
 ---
 
 ## 🌟 Highlights
@@ -63,40 +78,20 @@ DSL-configurable, event-driven, and designed for distributed multi-agent systems
 
 ---
 
-## 🛠 Project Status
+## 📢 Communications
 
-🟢 **Actively Maintained and under development**
-🧩 Plug-and-play DSL workflow execution
-🌍 Built for federated, scalable multi-agent AI environments
-🤝 Contributions and feedback are welcome!
-
----
-
-## Links
-
-📚 Docs [docs/](./docs/)
-🗃️ Bidding System Source Code [src/bid_system](./src/bid_system/)
-👥 Delegation System [src/delegation_service](./src/delegation_service/)
-🗳️ Voting System [src/social_choice](./src/social_choice/)
+1. 📧 Email: [community@opencyberspace.org](mailto:community@opencyberspace.org)  
+2. 💬 Discord: [OpenCyberspace](https://discord.gg/W24vZFNB)  
+3. 🐦 X (Twitter): [@opencyberspace](https://x.com/opencyberspace)
 
 ---
 
-## 📜 License
+## 🤝 Join Us!
 
-This project is released under the [Apache 2.0 License](./LICENSE).
-Use, adapt, and extend it to fit your AI workflow orchestration needs.
+AIGrid is **community-driven**. Theory, Protocol, implementations - All contributions are welcome.
 
----
+### Get Involved
 
-## 🗣️ Get Involved
+- 💬 [Join our Discord](https://discord.gg/W24vZFNB)  
+- 📧 Email us: [community@opencyberspace.org](mailto:community@opencyberspace.org)
 
-We’re building an intelligent, reproducible, and policy-driven foundation for agent workflows and task automation.
-
-* 💬 Open discussions
-* 🐛 Submit issues
-* ⭐ Star the project
-* 🤝 Contribute code or workflows
-
-Let’s co-create powerful agent coordination systems for tomorrow’s infrastructure.
-
----
