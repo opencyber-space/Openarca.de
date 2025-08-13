@@ -20,6 +20,22 @@ DSL-configurable, event-driven, and designed for distributed multi-agent systems
 
 ---
 
+## 🔗 Links
+
+* 🌐 [Website](https://social-choice-internal.pages.dev)
+* 📄 [Vision Paper](https://resources.aigr.id)
+* 📚 [Documentation](https://openarcade-internal.pages.dev/)
+* 💻 [GitHub](https://github.com/opencyber-space/openarca.de)
+
+---
+
+## 🏗 Architecture Diagrams
+
+* 🗳 [Social Choice Voting System](https://openarcade-internal.pages.dev/images/social-choice.png)
+* 💰 [Bidding System Architecture](https://openarcade-internal.pages.dev/images/bidding.png)
+
+---
+
 ## 🌟 Highlights
 
 ### 🧱 Modular Task Execution Lifecycle
