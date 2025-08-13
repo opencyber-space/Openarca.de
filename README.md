@@ -104,7 +104,7 @@ DSL-configurable, event-driven, and designed for distributed multi-agent systems
 
 ## 🤝 Join Us!
 
-AIGrid is **community-driven**. Theory, Protocol, implementations - All contributions are welcome.
+This project is **community-driven**. Theory, Protocol, implementations - All contributions are welcome.
 
 ### Get Involved
 
