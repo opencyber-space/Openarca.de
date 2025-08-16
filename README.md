@@ -24,16 +24,16 @@ OpenArcade provides formal methods for moving from many inputs to one outcome. W
 
 ## 🧭 Core Principles
 
-- ** 📥 Structured Input Gathering**  
+- **📥 Structured Input Gathering**  
   Ensure all relevant perspectives are captured, validated, and made interpretable across heterogeneous agents.
 
-- ** ⚖️ Equitable Decision Formation**  
+- **⚖️ Equitable Decision Formation**  
   Balance fairness, efficiency, and robustness while resisting manipulation.
 
-- ** ✅ Accountable Execution**  
+- **✅ Accountable Execution**  
   Translate collective outcomes into coordinated action, enforce compliance, and monitor real-world impact.
 
-- ** 🔧 Adaptive Governance**  
+- **🔧 Adaptive Governance**  
   Continuously evolve rules, norms, and protocols alongside the agent population and environment.
 
 ---
@@ -43,7 +43,7 @@ OpenArcade provides formal methods for moving from many inputs to one outcome. W
 OpenArcade implements **decision-making strategies** as interchangeable building blocks in MAS decision architectures.  
 
 
-- A system could use:   ** 💬 Discussion → 🧠 Argumentation ↔  🗳️ Voting ↔ 🤝 Consensus Building** as sequential strategies depending on context and requirements.
+- A system could use:   **💬 Discussion → 🧠 Argumentation ↔  🗳️ Voting ↔ 🤝 Consensus Building** as sequential strategies depending on context and requirements.
 
 
 These strategies span the full lifecycle of collective choice:
@@ -103,14 +103,8 @@ OpenArcade operationalizes this by embedding **computational social choice** int
 **A modular backend for orchestrating structured bidding, social voting, and task delegation workflows.**
 DSL-configurable, event-driven, and designed for distributed multi-agent systems.
 
-### Project Status 🚧
-
-* **Alpha**: This project is in active development and subject to rapid change. ⚠️
-* **Testing Phase**: Features are experimental; expect bugs, incomplete functionality, and breaking changes. 🧪
-* **Not Production-Ready**: We **do not recommend using this in production** (or relying on it) right now. ⛔
-* **Compatibility**: APIs, schemas, and configuration may change without notice. 🔄
-* **Feedback Welcome**: Early feedback helps us stabilize future releases. 💬
-
+🚧 **Project Status: Alpha**  
+_Not production-ready. See [Project Status](#project-status-) for details._
 ---
 
 ## 📚 Contents 
@@ -196,6 +190,28 @@ DSL-configurable, event-driven, and designed for distributed multi-agent systems
 | 🔹 Manual or error-prone evaluation processes        | Automated evaluation jobs with traceable DSL outputs       |
 | 🔹 Poor visibility into task states                  | Live status updates via WebSockets + NATS                  |
 | 🔹 Difficult multi-agent coordination and delegation | Standardized pipeline for delegation and response tracking |
+
+---
+
+# Project Status 🚧
+
+> ⚠️ **Development Status**  
+> The project is nearing full completion of version 1.0.0, with minor updates & optimization still being delivered.
+> 
+> ⚠️ **Alpha Release**  
+> Early access version. Use for testing only. Breaking changes may occur.  
+>
+> 🧪 **Testing Phase**  
+> Features are under active validation. Expect occasional issues and ongoing refinements.  
+>
+> ⛔ **Not Production-Ready**  
+> We do not recommend using this in production (or relying on it) right now. 
+> 
+> 🔄 **Compatibility**  
+> APIs, schemas, and configuration may change without notice.  
+>
+> 💬 **Feedback Welcome**  
+> Early feedback helps us stabilize future releases.  
 
 ---
 
