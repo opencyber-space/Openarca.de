@@ -105,6 +105,7 @@ DSL-configurable, event-driven, and designed for distributed multi-agent systems
 
 🚧 **Project Status: Alpha**  
 _Not production-ready. See [Project Status](#project-status-) for details._
+
 ---
 
 ## 📚 Contents 
