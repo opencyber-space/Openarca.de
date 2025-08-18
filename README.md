@@ -1,5 +1,7 @@
 # 🎮 OpenArcade: Social Decision Making for AI Societies
 
+[![Part of Ecosystem: AGI Grid](https://img.shields.io/badge/⚡️Part%20of%20Ecosystem-AGI%20Grid-0A84FF?style=for-the-badge)](https://www.AGIGr.id)
+
 **OpenArcade** is a framework for **computational social choice in Multi-Agent Systems (MAS)** and the **Internet of Agents (IoA)**.  
 It provides the mechanisms for shaping the composition and behavior of agent populations over time, enabling **collective decision-making, coordination, and governance** in large-scale, distributed agent societies.
 
