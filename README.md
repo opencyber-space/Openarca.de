@@ -1,4 +1,4 @@
-# 🎮 OpenArcade: Social Decision Making for AI Societies
+# 🎮 OpenArcade: Social Decision Making for AI Web
 
 [![Part of Ecosystem: AGI Grid](https://img.shields.io/badge/⚡️Part%20of%20Ecosystem-AGI%20Grid-0A84FF?style=for-the-badge)](https://www.AGIGr.id)
 
@@ -196,25 +196,13 @@ _Not production-ready. See [Project Status](#project-status-) for details._
 
 ---
 
-# Project Status 🚧
+## License
 
-> ⚠️ **Development Status**  
-> The project is nearing full completion of version 1.0.0, with minor updates & optimization still being delivered.
-> 
-> ⚠️ **Alpha Release**  
-> Early access version. Use for testing only. Breaking changes may occur.  
->
-> 🧪 **Testing Phase**  
-> Features are under active validation. Expect occasional issues and ongoing refinements.  
->
-> ⛔ **Not Production-Ready**  
-> We do not recommend using this in production (or relying on it) right now. 
-> 
-> 🔄 **Compatibility**  
-> APIs, schemas, and configuration may change without notice.  
->
-> 💬 **Feedback Welcome**  
-> Early feedback helps us stabilize future releases.  
+This project is licensed under the GNU Affero General Public License v3.0 —
+
+see the [LICENSE](LICENSE) file for details.
+
+Copyright (C) 2026 OpenCyberspace.org 
 
 ---
 
