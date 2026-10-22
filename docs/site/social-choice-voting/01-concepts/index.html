@@ -1,0 +1,1223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-schema/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>1. Concepts - Openarca.de</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Openarca.de" class="md-header__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Openarca.de
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Openarca.de" class="md-nav__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Openarca.de
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📚 Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🎯 Openarca.de
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            🎯 Openarca.de
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Voting System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Voting System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Actors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-lifecycle-of-a-social-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Lifecycle of a social task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-access-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Access modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Access modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private" class="md-nav__link">
+    <span class="md-ellipsis">
+      Private
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-task-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Task status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-current-implementation-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Current implementation gaps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Messaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-using-from-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using from Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-using-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bidding System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bidding System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/01-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/02-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/03-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/05-delegate-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Delegate system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/06-using-client-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using the client library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/07-using-client-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using the client in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-actors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Actors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-lifecycle-of-a-social-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Lifecycle of a social task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-access-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Access modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Access modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private" class="md-nav__link">
+    <span class="md-ellipsis">
+      Private
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-task-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Task status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-current-implementation-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Current implementation gaps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../">← Back to index</a></p>
+<h1 id="1-concepts">1. Concepts</h1>
+<h2 id="11-actors">1.1 Actors</h2>
+<ul>
+<li><strong>Creator</strong> (<code>created_by_subject_id</code>): whoever submits the social task.
+  Stored as metadata. It is also used as <code>sender_subject_id</code> on invitations
+  (<a href="../05-messaging/#52-voting_invite-sent-when-a-task-starts">§5.2</a>). It is not
+  checked against any subject registry.</li>
+<li><strong>Voters</strong>: subjects that submit votes. In <strong>private</strong> tasks only the
+  subjects listed in <code>org_ids</code> may vote. In <strong>public</strong> tasks any subject may
+  vote. See <a href="#13-access-modes">§1.3</a>.</li>
+<li><strong>Voting options</strong> (<code>voting_options_map</code>): the choices being voted on,
+  keyed by option ID. The system also uses each option key as an address:
+  invitations go to one channel per option key, and result notifications go
+  to each winner ID. In practice, then, option keys are subject IDs, that is,
+  the candidates. See <a href="../05-messaging/">§5</a>.</li>
+<li><strong>Invitation creator</strong> (<code>voting_message_request_creator</code>): optional. A
+  function or DSL workflow that builds custom content for the invitation
+  message when the task starts. See <a href="../04-functions/#42-invitation-creator">§4.2</a>.</li>
+<li><strong>PQT</strong> (<code>voting_pqt</code>): the pre-qualification test. It runs once for every
+  incoming vote and decides whether the vote is <code>qualified</code>. A disqualified
+  vote is still stored, but evaluation ignores it. See <a href="../04-functions/#43-pqt-pre-qualification-test">§4.3</a>.</li>
+<li><strong>Choice evaluation</strong> (<code>choice_evaluation</code>): required. It runs once per task,
+  inside the evaluator job, over all qualified votes, and returns one winner
+  or several. See <a href="../04-functions/#44-choice-evaluation">§4.4</a>.</li>
+<li><strong>Tie-breaker</strong> (<code>tie_breaker</code>): optional. It runs only when choice
+  evaluation returns more than one winner. Unlike the bidding system's
+  <code>bid_job_tie_id</code>, this hook is active. See <a href="../04-functions/#45-tie-breaker">§4.5</a>.</li>
+<li><strong>Post-award</strong> (<code>post_awarding</code>): required. It runs after the winners are
+  final. Its output is stored in the report and sent with the result
+  notification. See <a href="../04-functions/#46-post-award">§4.6</a>.</li>
+<li><strong>Constraints</strong> (<code>constraints_entry_id</code>, <code>constraints_entry_id_1</code>) and
+  <strong>supported protocols</strong> (<code>supported_protocols</code>): stored on the task but not
+  read by any service today. Treat them as forward-compatible schema.</li>
+<li><strong>Function registry</strong> (<code>FUNCTIONS_REGISTRY_URL</code>) and <strong>DSL workflow
+  registry</strong> (<code>DSL_WORKFLOW_URL</code>, <code>WORKFLOWS_API_URL</code>): external services
+  that host the hook logic. See <a href="../04-functions/#41-two-ways-to-plug-in-logic">§4.1</a>.</li>
+<li><strong>Messaging</strong>: Redis pub/sub (<code>ORG_REDIS_URL</code>) carries invitations. NATS
+  (<code>ORG_NATS_URL</code>) carries incoming votes and result notifications. See
+  <a href="../05-messaging/">§5</a>.</li>
+<li><strong>Kubernetes</strong>: each evaluation runs as a one-off Job in the
+  <code>votes-evaluation</code> namespace.</li>
+</ul>
+<h2 id="12-lifecycle-of-a-social-task">1.2 Lifecycle of a social task</h2>
+<pre><code> 1. POST /submit-social-choice-task        creator submits task, subject
+         │                                  spec, and evaluation spec
+         ▼
+ 2. SocialTaskController                   three documents persisted in
+         │                                 MongoDB under one generated
+         │                                 social_task_id; status is
+         │                                 whatever the request supplied
+         ▼
+ 3. CronScheduler (every 60 s)             finds tasks with
+         │                                 status == &quot;scheduled&quot; and
+         │                                 scheduled_time &lt;= now (UTC)
+         ▼
+ 4. VotingTaskInitiator                    - (optional) runs the
+         │                                   invitation creator
+         │                                 - publishes a &quot;voting_invite&quot;
+         │                                   on Redis, one channel per
+         │                                   voting option key
+         │                                 - sets status = &quot;started&quot;
+         ▼
+ 5. Each voter, asynchronously,
+    submits a vote:
+    POST /submit-vote  or  NATS vote.submit
+         │
+         ▼
+ 6. VoteAcceptor                           - rejects duplicates, unknown
+         │                                   tasks, tasks not &quot;started&quot;,
+         │                                   and (private) non-members
+         │                                 - runs the PQT → qualified
+         │                                 - checks whether evaluation
+         │                                   should start
+         │                                 - persists the vote
+         ▼
+ 7. VotingEvaluationInitiator              private: every org_id has a
+         │                                 qualified vote
+         │                                 public: qualified votes
+         │                                 &gt;= duration (default 5)
+         │                                 → launch Kubernetes Job
+         ▼
+ 8. Evaluator job                          choice evaluation →
+         │                                 (tie-breaker if &gt; 1 winner) →
+         │                                 post-award
+         ▼
+ 9. VoteResultFinalizer                    report_json stored,
+         │                                 status = &quot;complete&quot;
+         ▼
+10. ResultNotifier                         &quot;voting_result&quot; published on
+                                            NATS, one subject per winner
+</code></pre>
+<p>Key behavioral notes:</p>
+<ul>
+<li><strong>Start is time-driven. Evaluation is vote-driven.</strong> The scheduler starts
+  a task once <code>scheduled_time</code> has passed. After that, no timer runs.
+  Evaluation fires only when the vote threshold is met. A task that never
+  gets enough qualified votes stays <code>"started"</code> indefinitely.</li>
+<li><strong>The scheduler polls once a minute.</strong> A task starts up to 60 seconds after
+  its <code>scheduled_time</code>.</li>
+<li><strong>Disqualified votes still count as "voted".</strong> The duplicate check looks
+  at every stored vote, qualified or not. A subject whose vote fails the PQT
+  cannot vote again on that task.</li>
+<li><strong>PQT failures disqualify the vote.</strong> If the PQT workflow raises, or if
+  launching the evaluation job raises, the vote is stored with
+  <code>qualified = false</code>. Neither failure is reported to the voter.</li>
+<li><strong>Voting stays open during evaluation.</strong> Status changes to <code>"complete"</code>
+  only when the evaluator job finishes. Until then, new votes are still
+  accepted, but the job that is already running does not see them.</li>
+<li><strong>Messages are fire-and-forget.</strong> Invitations use Redis pub/sub, so a
+  subject that is not subscribed when the task starts never receives its
+  invitation. Result notifications on NATS have the same property. The
+  system keeps no delivery record. Compare the bidding system's
+  <code>BidTaskResult</code>.</li>
+</ul>
+<h2 id="13-access-modes">1.3 Access modes</h2>
+<p>Every task has a <code>social_task_access_type</code> of <code>"private"</code> or <code>"public"</code>.</p>
+<h3 id="private">Private</h3>
+<p>The creator names the eligible voters up front in <code>org_ids</code>. A vote from
+any other subject is rejected. Evaluation starts once <strong>every</strong> subject in
+<code>org_ids</code> has a qualified vote on file. If even one listed voter never votes,
+or that voter's vote is disqualified, the task never evaluates.</p>
+<h3 id="public">Public</h3>
+<p>Any subject may vote. <code>org_ids</code> is not checked. Evaluation starts once the
+number of qualified votes reaches <code>duration</code>, or 5 if <code>duration</code> is not set.</p>
+<blockquote>
+<p><code>duration</code> is a <strong>vote count</strong>, not a time span. The name is historical.
+No service treats it as seconds.</p>
+</blockquote>
+<p>Any other value of <code>social_task_access_type</code> is stored without validation.
+The intake service then accepts votes as if the task were public, and the
+task never evaluates.</p>
+<h2 id="14-task-status">1.4 Task status</h2>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Set by</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"scheduled"</code></td>
+<td>the creator, in the create request</td>
+<td>Waiting for <code>scheduled_time</code>. <strong>The service does not set this for you.</strong></td>
+</tr>
+<tr>
+<td><code>"started"</code></td>
+<td><code>VotingTaskInitiator</code></td>
+<td>Invitations sent, votes accepted</td>
+</tr>
+<tr>
+<td><code>"complete"</code></td>
+<td><code>VoteResultFinalizer</code></td>
+<td>Evaluation finished, <code>report_json</code> stored</td>
+</tr>
+</tbody>
+</table>
+<p>A task created without <code>"status": "scheduled"</code> and a <code>scheduled_time</code> is
+stored but never picked up by the scheduler, so it never starts.</p>
+<p>The services also write <code>start_time</code> (when the task starts) and <code>end_time</code>
+(when it completes) onto the task document. These fields are not part of the
+dataclass, so they appear in raw queries but not in parsed objects.</p>
+<h2 id="15-current-implementation-gaps">1.5 Current implementation gaps</h2>
+<p>These gaps were found by reading the code. Each one blocks or changes the
+flow in §1.2. Fix them, or work around them, before you rely on the system.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Gap</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>votes_submission/</code> and <code>evaluator_job/</code> use an older <code>schema.py</code>. In that version, <code>from_dict</code> is <code>Cls(**data)</code>, and the evaluation fields are strings named <code>voting_pqt_dsl</code>, <code>choice_evaluation_dsl</code>, <code>tie_breaker_dsl</code>, <code>post_awarding_dsl</code>, and <code>voting_message_request_creator_dsl</code>.</td>
+<td>MongoDB returns every document with an <code>_id</code> key. The old <code>from_dict</code> does not accept <code>_id</code>, so every read fails with <code>TypeError</code>, and <code>POST /submit-vote</code> returns <code>400</code> for every vote. Even after that is fixed, the documents that the submission service writes contain <code>voting_pqt</code> (a dict, <a href="../02-schema/#25-function-spec">§2.5</a>), not <code>voting_pqt_dsl</code>.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>VoteAcceptor</code> checks the evaluation trigger <strong>before</strong> it saves the current vote.</td>
+<td>The vote that would complete the set is not counted. Public tasks evaluate on the vote after the threshold. Private tasks never evaluate, because the last listed voter's vote is never counted and nobody else can vote.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The Kubernetes Job is named after <code>social_task_id</code>, which has the form <code>task_1a2b3c4d</code>.</td>
+<td>Kubernetes object names cannot contain <code>_</code>, so the Job is rejected. The exception is caught by the PQT block, and the vote that triggered evaluation is stored as <code>qualified = false</code>.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>VoteServers()</code> and the evaluator's <code>Initiator()</code> and <code>VoteResultFinalizer()</code> are built with the default <code>mongodb://localhost:27017</code>. They ignore <code>MONGO_URL</code>. The evaluator Job is not given <code>WORKFLOWS_API_URL</code>.</td>
+<td>Vote intake and evaluation read a different database than the submission service unless MongoDB is on localhost. The evaluator calls <code>http://localhost:5001</code> for workflows.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Invitations go to one Redis channel per <strong>voting option key</strong>, not per <code>org_ids</code> entry.</td>
+<td>Voters are not invited unless they are also options. This is the case in a peer election (<a href="../07-using-in-agent-sdk/">§7</a>).</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>scheduled_time</code> is compared to a naive <code>datetime.utcnow()</code>.</td>
+<td>A <code>scheduled_time</code> with a UTC offset raises <code>TypeError</code> in the scheduler's refresh. One such task stops <strong>every</strong> task from being dispatched. A trailing <code>Z</code> is rejected at creation with <code>400</code> (Python 3.10 <code>fromisoformat</code>).</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>POST /generic-query/&lt;collection&gt;</code> returns raw MongoDB documents.</td>
+<td><code>ObjectId</code> is not JSON-serializable, so any query that matches at least one document returns <code>400</code>.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>If the invitation creator raises, or the subject spec is missing, the task status is not updated.</td>
+<td>The task stays <code>"scheduled"</code>, and the scheduler retries it every 60 seconds, indefinitely.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>job_id</code> is never written.</td>
+<td>The field is always absent. Find the Job by name (<code>social_task_id</code>) in the <code>votes-evaluation</code> namespace.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a href="../">← Back to index</a> · <a href="../02-schema/">Next: Schema →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

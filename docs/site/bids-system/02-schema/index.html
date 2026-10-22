@@ -1,0 +1,1273 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01-concepts/">
+      
+      
+        <link rel="next" href="../03-apis/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>2. Schema - Openarca.de</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-schema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Openarca.de" class="md-header__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Openarca.de
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Schema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Openarca.de" class="md-nav__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Openarca.de
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📚 Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🎯 Openarca.de
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            🎯 Openarca.de
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Voting System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Voting System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/01-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/02-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/03-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/05-messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Messaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/06-using-from-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using from Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social-choice-voting/07-using-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bidding System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bidding System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-bidjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 BidJob
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-bid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Bid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-bidtaskresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 BidTaskResult
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Storage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-delegate-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Delegate system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-using-client-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using the client library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-using-client-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using the client in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-bidjob" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 BidJob
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-bid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Bid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-bidtaskresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 BidTaskResult
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Storage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../">← Back to index</a></p>
+<h1 id="2-schema">2. Schema</h1>
+<p>All three entities are plain dataclasses (<code>core/schema.py</code>) that round-trip
+through <code>to_dict()</code> / <code>from_dict()</code> and are stored as-is (no ORM/mapping
+layer) as MongoDB documents.</p>
+<h2 id="21-bidjob">2.1 <code>BidJob</code></h2>
+<p>Represents a task that is open for bidding.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bid_job_id</code></td>
+<td><code>string</code> (UUID4)</td>
+<td>auto</td>
+<td>Primary key. Generated server-side if omitted.</td>
+</tr>
+<tr>
+<td><code>bid_job_metadata</code></td>
+<td><code>object</code></td>
+<td>yes (may be <code>{}</code>)</td>
+<td>Free-form metadata about the job (e.g. deadlines, tags, source system). Not interpreted by Orcade; passed through to the PQT/evaluator functions and to subjects.</td>
+</tr>
+<tr>
+<td><code>bid_job_description</code></td>
+<td><code>object</code></td>
+<td>yes (may be <code>{}</code>)</td>
+<td>The actual task/work description a subject needs in order to construct a bid. Free-form — its shape is a contract between the creator and the subjects, not something Orcade validates.</td>
+</tr>
+<tr>
+<td><code>bid_job_name</code></td>
+<td><code>object</code></td>
+<td>yes (may be <code>{}</code>)</td>
+<td>Human-readable name/label for the job. Modeled as an object (not a plain string) so it can carry i18n variants or structured naming — e.g. <code>{"en": "..."}</code>.</td>
+</tr>
+<tr>
+<td><code>bid_job_evaluator_id</code></td>
+<td><code>string</code></td>
+<td><strong>yes</strong></td>
+<td><code>function_id</code> in the function registry that will be invoked once all subjects have bid. See <a href="../04-functions/#43-evaluator-function">§4.3</a>.</td>
+</tr>
+<tr>
+<td><code>bid_job_pqt_id</code></td>
+<td><code>string</code></td>
+<td>no (<code>""</code> = disabled)</td>
+<td><code>function_id</code> of the pre-qualification-test function invoked on every incoming bid. Empty string disables PQT checks entirely — bids are accepted unconditionally. See <a href="../04-functions/#42-pqt-pre-qualification-test-function">§4.2</a>.</td>
+</tr>
+<tr>
+<td><code>bid_job_tie_id</code></td>
+<td><code>string</code></td>
+<td>stored, unused</td>
+<td>Reserved for a future tie-breaker function. Accepted and persisted, never invoked today.</td>
+</tr>
+<tr>
+<td><code>bid_job_creator_id</code></td>
+<td><code>string</code></td>
+<td>yes</td>
+<td>Identifier of whoever created the job. Not validated against any user/subject registry.</td>
+</tr>
+<tr>
+<td><code>bid_job_subject_ids</code></td>
+<td><code>array&lt;string&gt;</code></td>
+<td>closed: yes · open: no (<code>[]</code> at creation)</td>
+<td><strong>Closed mode:</strong> the fixed list of eligible, required subject IDs. Determines who gets a <code>bid_request</code> and when evaluation fires. <strong>Open mode:</strong> the roster of applicants, filled in by the service as PQT-passing subjects apply. Must not be supplied on creation of an open job.</td>
+</tr>
+<tr>
+<td><code>bid_job_mode</code></td>
+<td><code>string</code></td>
+<td>no (default <code>"closed"</code>)</td>
+<td><code>"closed"</code> or <code>"open"</code>. Selects the bidding mode; see <a href="../01-concepts/#13-bidding-modes">§1.3</a>.</td>
+</tr>
+<tr>
+<td><code>bid_job_max_subjects</code></td>
+<td><code>integer</code> ≥ 1</td>
+<td>open: at least one of this or <code>bid_job_max_time</code> · closed: must be omitted</td>
+<td>Maximum number of accepted applicants. The job closes as soon as this many subjects have been accepted.</td>
+</tr>
+<tr>
+<td><code>bid_job_max_time</code></td>
+<td><code>integer</code> ≥ 1</td>
+<td>open: at least one of this or <code>bid_job_max_subjects</code> · closed: must be omitted</td>
+<td>Duration in <strong>seconds</strong>, measured from creation. The job closes once it passes.</td>
+</tr>
+<tr>
+<td><code>bid_job_status</code></td>
+<td><code>string</code></td>
+<td>auto (<code>"open"</code>)</td>
+<td><code>"open"</code> or <code>"closed"</code>. Only meaningful in open mode. Flipped to <code>"closed"</code> atomically by whichever closing trigger fires first.</td>
+</tr>
+<tr>
+<td><code>bid_job_created_time</code></td>
+<td><code>datetime</code> (ISO-8601 UTC string)</td>
+<td>auto</td>
+<td>When the job was created. Always stored in UTC with microsecond precision.</td>
+</tr>
+<tr>
+<td><code>bid_job_closes_at</code></td>
+<td><code>datetime</code> (ISO-8601 UTC string) | <code>null</code></td>
+<td>auto</td>
+<td><code>created_time + bid_job_max_time</code>, or <code>null</code> if no time limit is set. Open mode only.</td>
+</tr>
+<tr>
+<td><code>bid_job_tags</code></td>
+<td><code>array&lt;string&gt;</code></td>
+<td>no (default <code>[]</code>)</td>
+<td>Free-form labels for categorizing and finding the job, e.g. <code>["translation", "fr"]</code>. Used by <code>GET /bid-jobs/by-tags</code>. Each tag must be a non-empty string. Surrounding whitespace is stripped and duplicates are removed on creation. Matching is case-sensitive.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example — full <code>BidJob</code> document (closed mode):</strong></p>
+<pre><code class="language-json">{
+  &quot;bid_job_id&quot;: &quot;8f14e45f-ceea-4a19-8f6e-8b5a9c1a9f10&quot;,
+  &quot;bid_job_metadata&quot;: {
+    &quot;priority&quot;: &quot;high&quot;,
+    &quot;deadline&quot;: &quot;2026-09-15T00:00:00Z&quot;,
+    &quot;source_system&quot;: &quot;task-planner&quot;
+  },
+  &quot;bid_job_description&quot;: {
+    &quot;task_type&quot;: &quot;translate_document&quot;,
+    &quot;document_url&quot;: &quot;https://storage.example.com/docs/report.pdf&quot;,
+    &quot;source_language&quot;: &quot;en&quot;,
+    &quot;target_language&quot;: &quot;fr&quot;,
+    &quot;word_count&quot;: 4200
+  },
+  &quot;bid_job_name&quot;: {
+    &quot;en&quot;: &quot;Translate Q3 report to French&quot;
+  },
+  &quot;bid_job_evaluator_id&quot;: &quot;lowest-cost-evaluator:1.0-stable&quot;,
+  &quot;bid_job_pqt_id&quot;: &quot;min-confidence-pqt:1.0-stable&quot;,
+  &quot;bid_job_tie_id&quot;: &quot;&quot;,
+  &quot;bid_job_creator_id&quot;: &quot;planner-service&quot;,
+  &quot;bid_job_subject_ids&quot;: [
+    &quot;agent-translator-01&quot;,
+    &quot;agent-translator-02&quot;,
+    &quot;agent-translator-03&quot;
+  ],
+  &quot;bid_job_mode&quot;: &quot;closed&quot;,
+  &quot;bid_job_max_subjects&quot;: null,
+  &quot;bid_job_max_time&quot;: null,
+  &quot;bid_job_status&quot;: &quot;open&quot;,
+  &quot;bid_job_created_time&quot;: &quot;2026-09-09T10:00:00.000000+00:00&quot;,
+  &quot;bid_job_closes_at&quot;: null,
+  &quot;bid_job_tags&quot;: [&quot;translation&quot;, &quot;fr&quot;]
+}
+</code></pre>
+<p><strong>Example — full <code>BidJob</code> document (open mode, after two applicants):</strong></p>
+<pre><code class="language-json">{
+  &quot;bid_job_id&quot;: &quot;c2d7f1a0-4e3b-4f19-9a52-7b8e1d6c0a33&quot;,
+  &quot;bid_job_metadata&quot;: {&quot;source_system&quot;: &quot;marketplace&quot;},
+  &quot;bid_job_description&quot;: {
+    &quot;task_type&quot;: &quot;translate_document&quot;,
+    &quot;source_language&quot;: &quot;en&quot;,
+    &quot;target_language&quot;: &quot;fr&quot;
+  },
+  &quot;bid_job_name&quot;: {&quot;en&quot;: &quot;Open call: translate Q4 handbook&quot;},
+  &quot;bid_job_evaluator_id&quot;: &quot;lowest-cost-evaluator:1.0-stable&quot;,
+  &quot;bid_job_pqt_id&quot;: &quot;min-confidence-pqt:1.0-stable&quot;,
+  &quot;bid_job_tie_id&quot;: &quot;&quot;,
+  &quot;bid_job_creator_id&quot;: &quot;planner-service&quot;,
+  &quot;bid_job_subject_ids&quot;: [&quot;agent-translator-07&quot;, &quot;agent-translator-09&quot;],
+  &quot;bid_job_mode&quot;: &quot;open&quot;,
+  &quot;bid_job_max_subjects&quot;: 5,
+  &quot;bid_job_max_time&quot;: 3600,
+  &quot;bid_job_status&quot;: &quot;open&quot;,
+  &quot;bid_job_created_time&quot;: &quot;2026-10-05T09:00:00.000000+00:00&quot;,
+  &quot;bid_job_closes_at&quot;: &quot;2026-10-05T10:00:00.000000+00:00&quot;,
+  &quot;bid_job_tags&quot;: [&quot;translation&quot;, &quot;marketplace&quot;]
+}
+</code></pre>
+<p>Here the roster has two entries out of a possible five. The job stays open
+until either five subjects have applied or 10:00 UTC passes.</p>
+<h2 id="22-bid">2.2 <code>Bid</code></h2>
+<p>Represents one subject's bid for a job.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bid_id</code></td>
+<td><code>string</code> (UUID4)</td>
+<td>auto</td>
+<td>Primary key.</td>
+</tr>
+<tr>
+<td><code>bid_job_id</code></td>
+<td><code>string</code></td>
+<td>yes</td>
+<td>FK to <code>BidJob.bid_job_id</code>. Set by the server from the URL path (<code>/bid-jobs/{bid_job_id}/bids</code>), not by the request body.</td>
+</tr>
+<tr>
+<td><code>bid_data</code></td>
+<td><code>object</code></td>
+<td>yes (may be <code>{}</code>)</td>
+<td>The actual content of the bid — free-form, defined by whatever the creator/evaluator expect (e.g. price, ETA, confidence score, proposed plan). This is what the PQT function and evaluator function reason over.</td>
+</tr>
+<tr>
+<td><code>bid_subject_id</code></td>
+<td><code>string</code></td>
+<td>yes</td>
+<td>Which subject this bid belongs to. In closed mode it must already be a member of the job's <code>bid_job_subject_ids</code>, or the bid is rejected (not persisted). In open mode there is no prior membership check. Instead, a successful application adds the subject to <code>bid_job_subject_ids</code>. In both modes, a subject may hold at most one bid per job. A second submission is refused with <code>409</code>.</td>
+</tr>
+<tr>
+<td><code>submission_time</code></td>
+<td><code>datetime</code> (ISO-8601 string)</td>
+<td>auto</td>
+<td>Defaults to server time at construction.</td>
+</tr>
+<tr>
+<td><code>is_winner</code></td>
+<td><code>boolean</code></td>
+<td>auto (<code>false</code>)</td>
+<td>Flipped to <code>true</code> by the evaluation step for exactly one bid per job (the one matching <code>winner_subject_id</code>). Never set by the client.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example — full <code>Bid</code> document:</strong></p>
+<pre><code class="language-json">{
+  &quot;bid_id&quot;: &quot;3c7c3e2a-2d1a-4e2d-9a3b-6d2f9e6b0d4c&quot;,
+  &quot;bid_job_id&quot;: &quot;8f14e45f-ceea-4a19-8f6e-8b5a9c1a9f10&quot;,
+  &quot;bid_data&quot;: {
+    &quot;price_usd&quot;: 120.0,
+    &quot;eta_hours&quot;: 6,
+    &quot;confidence&quot;: 0.92
+  },
+  &quot;bid_subject_id&quot;: &quot;agent-translator-01&quot;,
+  &quot;submission_time&quot;: &quot;2026-09-09T10:15:32.481203&quot;,
+  &quot;is_winner&quot;: false
+}
+</code></pre>
+<h2 id="23-bidtaskresult">2.3 <code>BidTaskResult</code></h2>
+<p>Audit record of every round-trip through the delegate system (i.e. every
+<code>bid_request</code> and <code>bid_winner</code> notification and the subject's response to
+it). See <a href="../05-delegate-system/">§5</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bid_task_result_id</code></td>
+<td><code>string</code> (UUID4)</td>
+<td>auto</td>
+<td>Primary key.</td>
+</tr>
+<tr>
+<td><code>bid_job_id</code></td>
+<td><code>string</code></td>
+<td>yes</td>
+<td>Which job this notification round-trip belongs to.</td>
+</tr>
+<tr>
+<td><code>bid_subject_id</code></td>
+<td><code>string</code></td>
+<td>yes</td>
+<td>Which subject was notified.</td>
+</tr>
+<tr>
+<td><code>task_type</code></td>
+<td><code>string</code></td>
+<td>yes</td>
+<td>Either <code>"bid_request"</code> or <code>"bid_winner"</code> (see §5).</td>
+</tr>
+<tr>
+<td><code>task_result</code></td>
+<td><code>object</code></td>
+<td>yes</td>
+<td>The raw JSON body returned by the delegate system's <code>/api/submit-and-wait</code> call. Opaque to Orcade — stored verbatim.</td>
+</tr>
+<tr>
+<td><code>created_time</code></td>
+<td><code>datetime</code> (ISO-8601 string)</td>
+<td>auto</td>
+<td>When the result was recorded.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example — full <code>BidTaskResult</code> document:</strong></p>
+<pre><code class="language-json">{
+  &quot;bid_task_result_id&quot;: &quot;a1b2c3d4-5678-4abc-9def-0123456789ab&quot;,
+  &quot;bid_job_id&quot;: &quot;8f14e45f-ceea-4a19-8f6e-8b5a9c1a9f10&quot;,
+  &quot;bid_subject_id&quot;: &quot;agent-translator-01&quot;,
+  &quot;task_type&quot;: &quot;bid_request&quot;,
+  &quot;task_result&quot;: {
+    &quot;acknowledged&quot;: true,
+    &quot;agent_notes&quot;: &quot;Received job, computing bid now.&quot;
+  },
+  &quot;created_time&quot;: &quot;2026-09-09T10:15:01.001000&quot;
+}
+</code></pre>
+<h2 id="24-storage">2.4 Storage</h2>
+<p>All three entities live in MongoDB, database <code>assets</code> (<code>MONGO_URL</code>, default
+<code>mongodb://localhost:27017</code>), one collection each:</p>
+<table>
+<thead>
+<tr>
+<th>Collection</th>
+<th>Unique index</th>
+<th>Secondary indexes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bid_jobs</code></td>
+<td><code>bid_job_id</code></td>
+<td><code>bid_job_evaluator_id</code>, <code>bid_job_creator_id</code>, compound <code>(bid_job_mode, bid_job_status, bid_job_closes_at)</code> used by the expiry watcher</td>
+</tr>
+<tr>
+<td><code>bids</code></td>
+<td><code>bid_id</code></td>
+<td><code>bid_job_id</code>, <code>bid_subject_id</code>, <code>is_winner</code></td>
+</tr>
+<tr>
+<td><code>bid_task_results</code></td>
+<td><code>bid_task_result_id</code></td>
+<td><code>bid_job_id</code>, <code>bid_subject_id</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>update()</code> and <code>delete()</code> on any of the databases operate by the entity's own
+UUID field (<code>bid_job_id</code> / <code>bid_id</code>), never by Mongo's internal <code>_id</code>. Every
+<code>query()</code> call accepts a <strong>raw MongoDB filter document</strong> — see
+<a href="../03-apis/#36-query-endpoints">§3.6</a>.</p>
+<hr />
+<p><a href="../01-concepts/">← Previous: Concepts</a> · <a href="../">Back to index</a> · <a href="../03-apis/">Next: APIs →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

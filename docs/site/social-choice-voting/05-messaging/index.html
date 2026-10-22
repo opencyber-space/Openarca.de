@@ -1,0 +1,1151 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../04-functions/">
+      
+      
+        <link rel="next" href="../06-using-from-python/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>5. Messaging - Openarca.de</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-messaging-how-subjects-hear-about-votes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Openarca.de" class="md-header__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Openarca.de
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Messaging
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Openarca.de" class="md-nav__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Openarca.de
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📚 Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🎯 Openarca.de
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            🎯 Openarca.de
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Voting System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Voting System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    5. Messaging
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Messaging
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-delivery-guarantees" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Delivery guarantees
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-voting_invite-sent-when-a-task-starts" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 voting_invite: sent when a task starts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-vote-submission-over-nats" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Vote submission over NATS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-voting_result-sent-after-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 voting_result: sent after evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-sharing-a-bus-with-other-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Sharing a bus with other traffic
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-using-from-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using from Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-using-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bidding System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bidding System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/01-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/02-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/03-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/05-delegate-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Delegate system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/06-using-client-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using the client library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/07-using-client-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using the client in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-delivery-guarantees" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Delivery guarantees
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-voting_invite-sent-when-a-task-starts" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 voting_invite: sent when a task starts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-vote-submission-over-nats" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Vote submission over NATS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-voting_result-sent-after-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 voting_result: sent after evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-sharing-a-bus-with-other-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Sharing a bus with other traffic
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../">← Back to index</a></p>
+<h1 id="5-messaging-how-subjects-hear-about-votes">5. Messaging: how subjects hear about votes</h1>
+<p>Where the bidding system routes every message through a delegate service,
+the voting system publishes directly to two message buses:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Direction</th>
+<th>Transport</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>voting_invite</code></td>
+<td>system → subjects</td>
+<td>Redis pub/sub (<code>ORG_REDIS_URL</code>)</td>
+<td>one channel per voting option key</td>
+</tr>
+<tr>
+<td>vote submission</td>
+<td>subjects → system</td>
+<td>NATS (<code>ORG_NATS_URL</code>)</td>
+<td>subject <code>vote.submit</code></td>
+</tr>
+<tr>
+<td><code>voting_result</code></td>
+<td>system → subjects</td>
+<td>NATS (<code>ORG_NATS_URL</code>)</td>
+<td>one subject per winner</td>
+</tr>
+</tbody>
+</table>
+<p>Votes can also be submitted over REST (<a href="../03-apis/#34-how-to-submit-a-vote">§3.4</a>),
+and progress can be watched over the WebSocket live stream
+(<a href="../03-apis/#36-websocket-live-stream">§3.6</a>).</p>
+<h2 id="51-delivery-guarantees">5.1 Delivery guarantees</h2>
+<p>None. Redis pub/sub and core NATS both drop a message if no one is
+subscribed when it is published. The system does not record what was sent,
+retry, or wait for acknowledgements. Compare the bidding system's
+<code>BidTaskResult</code>.</p>
+<p>As a result:</p>
+<ul>
+<li>Subscribe <strong>before</strong> a task's <code>scheduled_time</code> to be sure you get the
+  invitation.</li>
+<li>Treat invitations and results as hints. The source of truth is the query
+  API: <code>GET /get-status/&lt;id&gt;</code> and <code>GET /get-report/&lt;id&gt;</code> (<a href="../03-apis/#35-query-endpoints">§3.5</a>).</li>
+</ul>
+<h2 id="52-voting_invite-sent-when-a-task-starts">5.2 <code>voting_invite</code>: sent when a task starts</h2>
+<p>Published by <code>VotingTaskInitiator</code> when the scheduler starts a task
+(<a href="../01-concepts/#12-lifecycle-of-a-social-task">§1.2</a> step 4), before the
+status changes to <code>"started"</code>.</p>
+<p><strong>Transport:</strong> Redis <code>PUBLISH</code> on <code>ORG_REDIS_URL</code> (default
+<code>redis://localhost:6379/0</code>). The same payload is published once on a channel
+named after <strong>each key of <code>voting_options_map</code></strong>.</p>
+<pre><code class="language-json">{
+  &quot;event_type&quot;: &quot;voting_invite&quot;,
+  &quot;sender_subject_id&quot;: &quot;planner-service&quot;,
+  &quot;event_data&quot;: {
+    &quot;custom_data&quot;: { &quot;...&quot;: &quot;invitation creator output, or {}&quot; },
+    &quot;voting_info&quot;: {
+      &quot;social_task_id&quot;: &quot;task_3f9c6d2e&quot;,
+      &quot;topic_title&quot;: &quot;Lead translator, Q4 handbook&quot;,
+      &quot;topic_description&quot;: &quot;Pick the agent that will lead the EN→FR translation of the Q4 handbook.&quot;,
+      &quot;voting_options_map&quot;: { &quot;agent-translator-01&quot;: &quot;Translator 01&quot;, &quot;...&quot;: &quot;...&quot; },
+      &quot;voting_option_metadata_map&quot;: { &quot;...&quot;: &quot;...&quot; },
+      &quot;supported_protocols&quot;: [&quot;http&quot;],
+      &quot;voting_message_request_creator&quot;: { &quot;...&quot;: &quot;...&quot; }
+    }
+  }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>event_type</code></td>
+<td>always <code>"voting_invite"</code></td>
+</tr>
+<tr>
+<td><code>sender_subject_id</code></td>
+<td>the task's <code>created_by_subject_id</code></td>
+</tr>
+<tr>
+<td><code>event_data.custom_data</code></td>
+<td>output of the invitation creator (<a href="../04-functions/#42-invitation-creator">§4.2</a>), or <code>{}</code></td>
+</tr>
+<tr>
+<td><code>event_data.voting_info</code></td>
+<td>the full subject spec. Read <code>social_task_id</code> from here to vote.</td>
+</tr>
+</tbody>
+</table>
+<p>The invitation does not include <code>org_ids</code>, the access type, or the goal. If a
+recipient needs them, it fetches <code>GET /get-full-task-bundle/&lt;id&gt;</code>.</p>
+<blockquote>
+<p><strong>Who is invited.</strong> Invitations go to the <strong>option keys</strong>, not to <code>org_ids</code>.
+If your options are candidate subjects and the voters are a different set
+of subjects, the voters are not invited. Tell them about the task another
+way. Invitations reach voters only when every voter is also an option, as
+in a peer election (<a href="../07-using-in-agent-sdk/">§7</a>).
+See <a href="../01-concepts/#15-current-implementation-gaps">§1.5 gap 5</a>.</p>
+</blockquote>
+<p><strong>Subscribing:</strong></p>
+<pre><code class="language-python">import json
+import redis
+
+r = redis.Redis.from_url(&quot;redis://org-redis:6379/0&quot;, decode_responses=True)
+pubsub = r.pubsub()
+pubsub.subscribe(&quot;agent-translator-01&quot;)      # your subject ID
+
+for msg in pubsub.listen():
+    if msg[&quot;type&quot;] != &quot;message&quot;:
+        continue
+    event = json.loads(msg[&quot;data&quot;])
+    if event.get(&quot;event_type&quot;) == &quot;voting_invite&quot;:
+        task_id = event[&quot;event_data&quot;][&quot;voting_info&quot;][&quot;social_task_id&quot;]
+        print(&quot;invited to&quot;, task_id)
+</code></pre>
+<h2 id="53-vote-submission-over-nats">5.3 Vote submission over NATS</h2>
+<p>The vote-intake service subscribes to the NATS subject <strong><code>vote.submit</code></strong> on
+<code>ORG_NATS_URL</code> (default <code>nats://localhost:4222</code>). A message there is handled
+exactly like <code>POST /submit-vote</code> (<a href="../03-apis/#34-how-to-submit-a-vote">§3.4</a>),
+and its body has the same six-field shape.</p>
+<pre><code class="language-python">import asyncio, json, uuid
+from nats.aio.client import Client as NATS
+
+async def vote():
+    nc = NATS()
+    await nc.connect(servers=[&quot;nats://org-nats:4222&quot;])
+    await nc.publish(&quot;vote.submit&quot;, json.dumps({
+        &quot;vote_id&quot;: str(uuid.uuid4()),
+        &quot;social_task_id&quot;: &quot;task_3f9c6d2e&quot;,
+        &quot;submitter_subject_id&quot;: &quot;agent-reviewer-01&quot;,
+        &quot;vote_data&quot;: {&quot;selected_option&quot;: &quot;agent-translator-02&quot;},
+        &quot;submission_time&quot;: &quot;2026-10-22T10:03:12&quot;,
+        &quot;qualified&quot;: False,
+    }).encode())
+    await nc.drain()
+
+asyncio.run(vote())
+</code></pre>
+<p>There is <strong>no reply</strong>. A rejected or disqualified vote is only logged by the
+service. To learn the outcome, query the vote afterwards
+(<code>GET /get-full-task-bundle/&lt;id&gt;</code>), or use REST, which returns <code>qualified</code> and
+any rejection message.</p>
+<h2 id="54-voting_result-sent-after-evaluation">5.4 <code>voting_result</code>: sent after evaluation</h2>
+<p>Published by the evaluator job's <code>ResultNotifier</code> after the report is stored
+(<a href="../01-concepts/#12-lifecycle-of-a-social-task">§1.2</a> step 10).</p>
+<p><strong>Transport:</strong> NATS <code>PUBLISH</code> on <code>ORG_NATS_URL</code>. The same payload is published
+once on a subject named after <strong>each winner</strong>. Losers, voters, and the
+creator are not notified.</p>
+<pre><code class="language-json">{
+  &quot;event_type&quot;: &quot;voting_result&quot;,
+  &quot;task_id&quot;: &quot;task_3f9c6d2e&quot;,
+  &quot;event_data&quot;: {
+    &quot;social_task_id&quot;: &quot;task_3f9c6d2e&quot;,
+    &quot;winners&quot;: [&quot;agent-translator-02&quot;],
+    &quot;post_award_payload&quot;: { &quot;...&quot;: &quot;post-award hook output verbatim&quot; }
+  }
+}
+</code></pre>
+<p>The payload is deliberately lean, like the bidding system's <code>bid_winner</code>.
+Everything the winner needs to act on must be put into <code>post_award_payload</code>
+by the post-award hook (<a href="../04-functions/#46-post-award">§4.6</a>). The full
+context is in <code>GET /get-report/&lt;id&gt;</code>.</p>
+<p>Anyone else who needs the outcome, such as the creator, the voters, or a
+dashboard, polls <code>GET /get-status/&lt;id&gt;</code> until it returns <code>"complete"</code>, or
+watches the live stream (<a href="../03-apis/#36-websocket-live-stream">§3.6</a>).</p>
+<p><strong>Subscribing:</strong></p>
+<pre><code class="language-python">import asyncio, json
+from nats.aio.client import Client as NATS
+
+async def listen(subject_id: str):
+    nc = NATS()
+    await nc.connect(servers=[&quot;nats://org-nats:4222&quot;])
+
+    async def on_msg(msg):
+        event = json.loads(msg.data.decode())
+        if event.get(&quot;event_type&quot;) == &quot;voting_result&quot;:
+            print(&quot;won&quot;, event[&quot;task_id&quot;], event[&quot;event_data&quot;][&quot;post_award_payload&quot;])
+
+    await nc.subscribe(subject_id, cb=on_msg)
+    while True:
+        await asyncio.sleep(1)
+
+asyncio.run(listen(&quot;agent-translator-02&quot;))
+</code></pre>
+<h2 id="55-sharing-a-bus-with-other-traffic">5.5 Sharing a bus with other traffic</h2>
+<p>Both buses address subjects by their bare subject ID: the Redis channel
+<code>agent-translator-01</code> and the NATS subject <code>agent-translator-01</code>. Other systems
+on the same Redis or NATS may use the same names. Always check <code>event_type</code>
+before you act on a message, and ignore types you don't recognise.</p>
+<hr />
+<p><a href="../04-functions/">← Previous: Functions to write</a> · <a href="../">Back to index</a> · <a href="../06-using-from-python/">Next: Using the system from Python →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

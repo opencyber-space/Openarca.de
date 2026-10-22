@@ -1,0 +1,1636 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../02-schema/">
+      
+      
+        <link rel="next" href="../04-functions/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>3. APIs - Openarca.de</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-apis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Openarca.de" class="md-header__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Openarca.de
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. APIs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Openarca.de" class="md-nav__button md-logo" aria-label="Openarca.de" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Openarca.de
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📚 Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    🎯 Openarca.de
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            🎯 Openarca.de
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Voting System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Voting System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-response-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Response format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-how-to-create-a-social-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 How to create a social task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-how-to-validate-a-task-without-creating-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 How to validate a task without creating it
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-how-to-submit-a-vote" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 How to submit a vote
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-query-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Query endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Query endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-get-statussocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-status/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-get-reportsocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-report/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-get-full-task-bundlesocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-full-task-bundle/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-is-live-streaming-enabledsocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /is-live-streaming-enabled/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-generic-querycollection_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /generic-query/&lt;collection_name&gt;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-websocket-live-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 WebSocket live stream
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Messaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-using-from-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using from Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-using-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bidding System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bidding System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/01-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/02-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/03-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/04-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Functions to write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/05-delegate-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Delegate system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/06-using-client-library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Using the client library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bids-system/07-using-client-in-agent-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. Using the client in the agent SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-response-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Response format
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-how-to-create-a-social-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 How to create a social task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-how-to-validate-a-task-without-creating-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 How to validate a task without creating it
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-how-to-submit-a-vote" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 How to submit a vote
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-query-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Query endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Query endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-get-statussocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-status/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-get-reportsocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-report/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-get-full-task-bundlesocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /get-full-task-bundle/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-is-live-streaming-enabledsocial_task_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /is-live-streaming-enabled/&lt;social_task_id&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-generic-querycollection_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /generic-query/&lt;collection_name&gt;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-websocket-live-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 WebSocket live stream
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a href="../">← Back to index</a></p>
+<h1 id="3-apis">3. APIs</h1>
+<p>The voting system exposes three HTTP servers and one WebSocket server. Routes
+are mounted at the root. There is no auth or ACL layer, so treat every
+endpoint as internal, trusted-network only.</p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Default address</th>
+<th>Endpoints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submission</td>
+<td><code>http://&lt;host&gt;:5000</code></td>
+<td>§3.2, §3.3</td>
+</tr>
+<tr>
+<td>Vote intake</td>
+<td><code>http://&lt;host&gt;:8081</code></td>
+<td>§3.4 (plus NATS, <a href="../05-messaging/#53-vote-submission-over-nats">§5.3</a>)</td>
+</tr>
+<tr>
+<td>Query</td>
+<td><code>http://&lt;host&gt;:8082</code></td>
+<td>§3.5</td>
+</tr>
+<tr>
+<td>Live stream</td>
+<td><code>ws://&lt;host&gt;:8765</code></td>
+<td>§3.6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="31-response-format">3.1 Response format</h2>
+<p>There is no shared envelope. Success responses return the payload directly.
+Failures return:</p>
+<pre><code class="language-json">{ &quot;error&quot;: &quot;human readable message&quot; }
+</code></pre>
+<p>Each endpoint below lists its own success shape and status codes.</p>
+<h2 id="32-how-to-create-a-social-task">3.2 How to create a social task</h2>
+<p><code>POST /submit-social-choice-task</code> (submission server)</p>
+<p>Parses the request into the three entities in <a href="../02-schema/">§2</a>, generates a
+<code>social_task_id</code>, and inserts the three documents. No invitations are sent at
+this point. They go out when the scheduler starts the task
+(<a href="../01-concepts/#12-lifecycle-of-a-social-task">§1.2</a>).</p>
+<p><strong>Request body.</strong> Three top-level objects. Every key listed is read with
+<code>payload[...]</code>, so it must be present unless marked optional.</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Maps to</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>social_task.created_by_subject_id</code></td>
+<td><code>created_by_subject_id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>social_task.created_by_subject_data</code></td>
+<td><code>created_by_subject_data</code></td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>social_task.org_ids</code></td>
+<td><code>org_ids</code></td>
+<td>array of subject IDs</td>
+</tr>
+<tr>
+<td><code>social_task.access_type</code></td>
+<td><code>social_task_access_type</code></td>
+<td><code>"private"</code> or <code>"public"</code></td>
+</tr>
+<tr>
+<td><code>social_task.goal</code></td>
+<td><code>goal_data</code></td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>social_task.topics</code></td>
+<td><code>social_tasks_topics</code></td>
+<td>array</td>
+</tr>
+<tr>
+<td><code>social_task.properties</code></td>
+<td><code>social_task_properties</code></td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>social_task.creation_time</code></td>
+<td><code>creation_time</code></td>
+<td>ISO-8601, no <code>Z</code></td>
+</tr>
+<tr>
+<td><code>social_task.scheduled_time</code></td>
+<td><code>scheduled_time</code></td>
+<td>optional. Naive ISO-8601 in UTC. Needed to start.</td>
+</tr>
+<tr>
+<td><code>social_task.duration</code></td>
+<td><code>duration</code></td>
+<td>optional. Public vote threshold.</td>
+</tr>
+<tr>
+<td><code>social_task.status</code></td>
+<td><code>status</code></td>
+<td>optional. Send <code>"scheduled"</code> for the task to start.</td>
+</tr>
+<tr>
+<td><code>social_task.report</code></td>
+<td><code>report_json</code></td>
+<td>optional, default <code>{}</code></td>
+</tr>
+<tr>
+<td><code>social_task.enable_live_streaming</code></td>
+<td><code>enable_live_streaming</code></td>
+<td>optional, default <code>false</code></td>
+</tr>
+<tr>
+<td><code>subject_spec.title</code></td>
+<td><code>topic_title</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>subject_spec.description</code></td>
+<td><code>topic_description</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>subject_spec.voting_options</code></td>
+<td><code>voting_options_map</code></td>
+<td>object, option ID → label</td>
+</tr>
+<tr>
+<td><code>subject_spec.voting_metadata</code></td>
+<td><code>voting_option_metadata_map</code></td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>subject_spec.supported_protocols</code></td>
+<td><code>supported_protocols</code></td>
+<td>array</td>
+</tr>
+<tr>
+<td><code>subject_spec.voting_request</code></td>
+<td><code>voting_message_request_creator</code></td>
+<td>function spec, or <code>{}</code></td>
+</tr>
+<tr>
+<td><code>evaluation_spec.constraints_primary</code></td>
+<td><code>constraints_entry_id</code></td>
+<td>string, may be <code>""</code></td>
+</tr>
+<tr>
+<td><code>evaluation_spec.constraints_secondary</code></td>
+<td><code>constraints_entry_id_1</code></td>
+<td>string, may be <code>""</code></td>
+</tr>
+<tr>
+<td><code>evaluation_spec.voting_pqt</code></td>
+<td><code>voting_pqt</code></td>
+<td>function spec</td>
+</tr>
+<tr>
+<td><code>evaluation_spec.evaluation</code></td>
+<td><code>choice_evaluation</code></td>
+<td>function spec</td>
+</tr>
+<tr>
+<td><code>evaluation_spec.tie_breaker</code></td>
+<td><code>tie_breaker</code></td>
+<td>function spec, or <code>{}</code></td>
+</tr>
+<tr>
+<td><code>evaluation_spec.post_award</code></td>
+<td><code>post_awarding</code></td>
+<td>function spec</td>
+</tr>
+</tbody>
+</table>
+<p>Function specs are described in <a href="../02-schema/#25-function-spec">§2.5</a>.</p>
+<p><strong>Private-task example.</strong> Three named reviewers choose between three
+translators. The task starts at 10:00 UTC.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:5000/submit-social-choice-task \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;social_task&quot;: {
+      &quot;created_by_subject_id&quot;: &quot;planner-service&quot;,
+      &quot;created_by_subject_data&quot;: {&quot;team&quot;: &quot;localisation&quot;},
+      &quot;org_ids&quot;: [&quot;agent-reviewer-01&quot;, &quot;agent-reviewer-02&quot;, &quot;agent-reviewer-03&quot;],
+      &quot;access_type&quot;: &quot;private&quot;,
+      &quot;goal&quot;: {&quot;objective&quot;: &quot;Choose the lead translator for the Q4 handbook&quot;},
+      &quot;topics&quot;: [&quot;translation&quot;, &quot;fr&quot;],
+      &quot;properties&quot;: {&quot;urgency&quot;: &quot;high&quot;},
+      &quot;creation_time&quot;: &quot;2026-10-22T09:00:00&quot;,
+      &quot;scheduled_time&quot;: &quot;2026-10-22T10:00:00&quot;,
+      &quot;status&quot;: &quot;scheduled&quot;,
+      &quot;enable_live_streaming&quot;: true
+    },
+    &quot;subject_spec&quot;: {
+      &quot;title&quot;: &quot;Lead translator, Q4 handbook&quot;,
+      &quot;description&quot;: &quot;Pick the agent that will lead the EN→FR translation of the Q4 handbook.&quot;,
+      &quot;voting_options&quot;: {
+        &quot;agent-translator-01&quot;: &quot;Translator 01&quot;,
+        &quot;agent-translator-02&quot;: &quot;Translator 02&quot;,
+        &quot;agent-translator-03&quot;: &quot;Translator 03&quot;
+      },
+      &quot;voting_metadata&quot;: {},
+      &quot;supported_protocols&quot;: [&quot;http&quot;],
+      &quot;voting_request&quot;: {&quot;mode&quot;: &quot;function&quot;, &quot;function_id&quot;: &quot;voting-invite-builder:1.0-stable&quot;}
+    },
+    &quot;evaluation_spec&quot;: {
+      &quot;constraints_primary&quot;: &quot;&quot;,
+      &quot;constraints_secondary&quot;: &quot;&quot;,
+      &quot;voting_pqt&quot;: {&quot;mode&quot;: &quot;dsl&quot;, &quot;workflow_id&quot;: &quot;vote-option-is-valid:1.0&quot;},
+      &quot;evaluation&quot;: {&quot;mode&quot;: &quot;dsl&quot;, &quot;workflow_id&quot;: &quot;plurality-count:1.0&quot;},
+      &quot;tie_breaker&quot;: {&quot;mode&quot;: &quot;dsl&quot;, &quot;workflow_id&quot;: &quot;earliest-vote-wins:1.0&quot;},
+      &quot;post_award&quot;: {&quot;mode&quot;: &quot;dsl&quot;, &quot;workflow_id&quot;: &quot;assign-lead-translator:1.0&quot;}
+    }
+  }'
+</code></pre>
+<p><strong>Public-task example.</strong> Changes from the private example: <code>access_type</code> is
+<code>"public"</code>, <code>org_ids</code> is empty, and evaluation fires at 10 qualified votes.</p>
+<pre><code class="language-json">{
+  &quot;social_task&quot;: {
+    &quot;access_type&quot;: &quot;public&quot;,
+    &quot;org_ids&quot;: [],
+    &quot;duration&quot;: 10,
+    &quot;...&quot;: &quot;same as above&quot;
+  },
+  &quot;subject_spec&quot;: { &quot;...&quot;: &quot;same as above&quot; },
+  &quot;evaluation_spec&quot;: { &quot;...&quot;: &quot;same as above&quot; }
+}
+</code></pre>
+<p><strong>Response <code>201 Created</code>:</strong></p>
+<pre><code class="language-json">{ &quot;social_task_id&quot;: &quot;task_3f9c6d2e&quot; }
+</code></pre>
+<p><strong>Error responses:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>400</code></td>
+<td>Empty or non-JSON body; one of <code>social_task</code>, <code>subject_spec</code>, <code>evaluation_spec</code> is missing; <code>creation_time</code> or <code>scheduled_time</code> is not a valid ISO-8601 string (a trailing <code>Z</code> is rejected)</td>
+</tr>
+<tr>
+<td><code>500</code></td>
+<td>A nested key is missing (<code>KeyError</code>), or the database insert fails. The body is always <code>{"error": "Internal server error"}</code>. Check the service log for the missing key.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Creation does not validate <code>access_type</code>, function specs, or whether
+<code>status</code> and <code>scheduled_time</code> are set. A task can be created successfully
+and still never start. See <a href="../01-concepts/#14-task-status">§1.4</a>.</p>
+</blockquote>
+<h2 id="33-how-to-validate-a-task-without-creating-it">3.3 How to validate a task without creating it</h2>
+<p><code>POST /parse-social-choice-task</code> (submission server)</p>
+<p>Runs the same parser as §3.2 and returns the result without writing anything.
+Use it to check a payload and see the stored field names.</p>
+<pre><code class="language-bash">curl -X POST http://localhost:5000/parse-social-choice-task \
+  -H &quot;Content-Type: application/json&quot; \
+  -d @task.json
+</code></pre>
+<p><strong>Response <code>200</code>:</strong></p>
+<pre><code class="language-json">{
+  &quot;parsed&quot;: {
+    &quot;social_task&quot;: { &quot;...&quot;: &quot;SocialTaskCoreData.to_dict()&quot; },
+    &quot;subject_spec&quot;: { &quot;...&quot;: &quot;SocialChoiceSubjectSpecInput.to_dict()&quot; },
+    &quot;evaluation_spec&quot;: { &quot;...&quot;: &quot;SocialChoiceEvaluationInput.to_dict()&quot; }
+  }
+}
+</code></pre>
+<p>The <code>social_task_id</code> in the response is freshly generated and is not
+reserved. §3.2 generates a different ID. Errors are the same as §3.2.</p>
+<h2 id="34-how-to-submit-a-vote">3.4 How to submit a vote</h2>
+<p><code>POST /submit-vote</code> (vote-intake server, port <code>8081</code>)</p>
+<pre><code class="language-bash">curl -X POST http://localhost:8081/submit-vote \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;vote_id&quot;: &quot;7d0f2a9c-2b4e-4a51-9a3e-0c6f1b2d4e8a&quot;,
+    &quot;social_task_id&quot;: &quot;task_3f9c6d2e&quot;,
+    &quot;submitter_subject_id&quot;: &quot;agent-reviewer-01&quot;,
+    &quot;vote_data&quot;: {&quot;selected_option&quot;: &quot;agent-translator-02&quot;},
+    &quot;submission_time&quot;: &quot;2026-10-22T10:03:12&quot;,
+    &quot;qualified&quot;: false
+  }'
+</code></pre>
+<p>The body must contain <strong>exactly</strong> the six <code>Votes</code> fields, no more and no
+fewer, because it is parsed with <code>Votes(**data)</code>. The server overwrites
+<code>submission_time</code> and <code>qualified</code>, so any placeholder values work. The client
+chooses <code>vote_id</code>.</p>
+<p>Processing order inside <code>VoteAcceptor.accept_vote</code>:</p>
+<ol>
+<li>Reject if <code>submitter_subject_id</code> already has a vote on this task, qualified
+   or not.</li>
+<li>Reject if the task does not exist.</li>
+<li>Reject if the task status is not <code>"started"</code>.</li>
+<li><strong>Private only:</strong> reject if <code>submitter_subject_id</code> is not in <code>org_ids</code>.</li>
+<li>Load the subject spec and evaluation spec. Reject if either is missing, or
+   if no PQT is configured.</li>
+<li>Run the PQT with the task, both specs, and <code>vote_data</code>
+   (<a href="../04-functions/#43-pqt-pre-qualification-test">§4.3</a>). <code>qualified</code> is
+   <code>bool(result["qualified"])</code>.</li>
+<li>Check whether evaluation should start, and if so, launch the Kubernetes
+   Job (<a href="../01-concepts/#12-lifecycle-of-a-social-task">§1.2</a> step 7).</li>
+<li>If step 6 or step 7 raised, set <code>qualified = false</code>.</li>
+<li>Persist the vote with the server's <code>submission_time</code> and the computed
+   <code>qualified</code>.</li>
+</ol>
+<p><strong>Response <code>200</code>:</strong></p>
+<pre><code class="language-json">{ &quot;status&quot;: &quot;accepted&quot;, &quot;qualified&quot;: true }
+</code></pre>
+<p><code>"status": "accepted"</code> means the vote was stored. A disqualified vote also
+returns <code>200</code>, with <code>"qualified": false</code>, and still counts as this subject's
+one vote.</p>
+<p><strong>Error responses:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>400</code></td>
+<td>Any failure: a missing or extra field, a rejection in steps 1 to 5, or a database error. The message is in <code>error</code>, for example <code>"Vote rejected: Vote already submitted for this task."</code></td>
+</tr>
+</tbody>
+</table>
+<p>Rejection messages from steps 1 to 5:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vote rejected: Vote already submitted for this task.</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>Vote rejected: Invalid social_task_id.</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>Vote rejected: Voting task is not active yet.</code></td>
+<td>3 (also returned after the task is complete)</td>
+</tr>
+<tr>
+<td><code>Vote rejected: You are not authorized to vote in this private task.</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>Voting task configuration is incomplete.</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>Voting PQT DSL is not defined.</code></td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The winner is <strong>not</strong> returned from this call. Poll <code>GET /get-status/&lt;id&gt;</code>
+until it returns <code>"complete"</code>, then read <code>GET /get-report/&lt;id&gt;</code> (§3.5). You
+can also subscribe to the winner's NATS subject (<a href="../05-messaging/#54-voting_result-sent-after-evaluation">§5.4</a>).</p>
+</blockquote>
+<h2 id="35-query-endpoints">3.5 Query endpoints</h2>
+<p>All on the query server (port <code>8082</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/get-status/&lt;social_task_id&gt;</code></td>
+<td>Current task status</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/get-report/&lt;social_task_id&gt;</code></td>
+<td>The final <code>report_json</code></td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/get-full-task-bundle/&lt;social_task_id&gt;</code></td>
+<td>Task, specs, and all votes</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/is-live-streaming-enabled/&lt;social_task_id&gt;</code></td>
+<td>Whether §3.6 will serve this task</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/generic-query/&lt;collection_name&gt;</code></td>
+<td>Raw MongoDB filter on one collection</td>
+</tr>
+</tbody>
+</table>
+<p>Every endpoint returns <code>400 {"error": "..."}</code> on any failure, including an
+unknown <code>social_task_id</code> (for example <code>"Error fetching status: Task not
+found."</code>). None of them return <code>404</code>.</p>
+<h3 id="get-get-statussocial_task_id"><code>GET /get-status/&lt;social_task_id&gt;</code></h3>
+<pre><code class="language-bash">curl http://localhost:8082/get-status/task_3f9c6d2e
+</code></pre>
+<p>→ <code>200 { "status": "started" }</code>. The value is <code>null</code> if the task was created
+without a status.</p>
+<h3 id="get-get-reportsocial_task_id"><code>GET /get-report/&lt;social_task_id&gt;</code></h3>
+<pre><code class="language-bash">curl http://localhost:8082/get-report/task_3f9c6d2e
+</code></pre>
+<p>→ <code>200</code> with the <code>report_json</code> object itself, unwrapped
+(<a href="../02-schema/#26-report_json">§2.6</a>). Before the task completes, this is
+<code>{}</code>.</p>
+<h3 id="get-get-full-task-bundlesocial_task_id"><code>GET /get-full-task-bundle/&lt;social_task_id&gt;</code></h3>
+<pre><code class="language-bash">curl http://localhost:8082/get-full-task-bundle/task_3f9c6d2e
+</code></pre>
+<p>→ <code>200</code>:</p>
+<pre><code class="language-json">{
+  &quot;task&quot;: { &quot;...&quot;: &quot;SocialTaskCoreData.to_dict()&quot; },
+  &quot;subject_spec&quot;: { &quot;...&quot;: &quot;SocialChoiceSubjectSpecInput.to_dict()&quot; },
+  &quot;evaluation_input&quot;: { &quot;...&quot;: &quot;SocialChoiceEvaluationInput.to_dict()&quot; },
+  &quot;votes&quot;: [ { &quot;...&quot;: &quot;Votes.to_dict()&quot; } ]
+}
+</code></pre>
+<p><code>votes</code> includes disqualified votes. Filter on <code>qualified</code> yourself. Note the
+key is <code>evaluation_input</code>, not <code>evaluation_spec</code> as in the report.</p>
+<h3 id="get-is-live-streaming-enabledsocial_task_id"><code>GET /is-live-streaming-enabled/&lt;social_task_id&gt;</code></h3>
+<p>→ <code>200 { "enabled": true }</code></p>
+<h3 id="post-generic-querycollection_name"><code>POST /generic-query/&lt;collection_name&gt;</code></h3>
+<p>The body is a <strong>raw MongoDB filter document</strong> passed to <code>collection.find()</code>.
+<code>collection_name</code> must be one of <code>social_task_core_data</code>,
+<code>social_choice_subject_spec</code>, <code>social_choice_evaluation_input</code>, or <code>votes</code>.
+Any other name returns <code>400 {"error": "Error during query: Unsupported
+collection: ..."}</code>.</p>
+<pre><code class="language-bash"># every task that is currently accepting votes
+curl -X POST http://localhost:8082/generic-query/social_task_core_data \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;status&quot;: &quot;started&quot;}'
+
+# every vote a subject has cast
+curl -X POST http://localhost:8082/generic-query/votes \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;submitter_subject_id&quot;: &quot;agent-reviewer-01&quot;}'
+</code></pre>
+<blockquote>
+<p>This endpoint returns documents with MongoDB's <code>_id</code>, which is not
+JSON-serializable. Today, any query that matches at least one document
+returns <code>400</code>, and only an empty result succeeds (<code>200 []</code>). See
+<a href="../01-concepts/#15-current-implementation-gaps">§1.5 gap 7</a>. Until that is
+fixed, use the per-task endpoints above.</p>
+</blockquote>
+<h2 id="36-websocket-live-stream">3.6 WebSocket live stream</h2>
+<p><code>ws://&lt;host&gt;:8765</code> (query system). The path is not checked.</p>
+<p>The server pushes the full task bundle on a fixed interval, so dashboards can
+watch votes arrive. It serves only tasks created with
+<code>enable_live_streaming: true</code>.</p>
+<p><strong>1. Connect and send one JSON message:</strong></p>
+<pre><code class="language-json">{ &quot;social_task_id&quot;: &quot;task_3f9c6d2e&quot;, &quot;refresh_interval&quot;: 5 }
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>social_task_id</code></td>
+<td>string</td>
+<td>required</td>
+<td></td>
+</tr>
+<tr>
+<td><code>refresh_interval</code></td>
+<td>int</td>
+<td><code>5</code></td>
+<td>Seconds between pushes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. The server checks the task, then streams:</strong></p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;update&quot;,
+  &quot;data&quot;: {
+    &quot;task&quot;: { &quot;...&quot;: &quot;...&quot; },
+    &quot;subject_spec&quot;: { &quot;...&quot;: &quot;...&quot; },
+    &quot;evaluation_input&quot;: { &quot;...&quot;: &quot;...&quot; },
+    &quot;votes&quot;: [ &quot;...&quot; ]
+  }
+}
+</code></pre>
+<p><code>data</code> is the same object as <code>GET /get-full-task-bundle</code> (§3.5). One message
+is sent every <code>refresh_interval</code> seconds until the client disconnects. The
+stream does not stop when the task completes. Watch <code>data.task.status</code> and
+disconnect yourself.</p>
+<p><strong>Errors.</strong> The server sends one message and closes:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{"error": "Missing social_task_id"}</code></td>
+<td>The field is absent</td>
+</tr>
+<tr>
+<td><code>{"error": "Invalid request format. Must be JSON with 'social_task_id' and 'refresh_interval'"}</code></td>
+<td>The first message is not JSON, or <code>refresh_interval</code> is not an integer</td>
+</tr>
+<tr>
+<td><code>{"error": "Live streaming not enabled for this task"}</code></td>
+<td><code>enable_live_streaming</code> is <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>An unknown <code>social_task_id</code> closes the connection without an error message.
+If a single push fails, for example on a database error, the failure is
+logged and the next push is attempted on schedule.</p>
+<p><strong>Example client:</strong></p>
+<pre><code class="language-python">import asyncio, json
+import websockets
+
+async def watch(task_id: str):
+    async with websockets.connect(&quot;ws://localhost:8765&quot;) as ws:
+        await ws.send(json.dumps({&quot;social_task_id&quot;: task_id, &quot;refresh_interval&quot;: 5}))
+        async for raw in ws:
+            msg = json.loads(raw)
+            if &quot;error&quot; in msg:
+                raise RuntimeError(msg[&quot;error&quot;])
+            task = msg[&quot;data&quot;][&quot;task&quot;]
+            votes = msg[&quot;data&quot;][&quot;votes&quot;]
+            print(task.get(&quot;status&quot;), len(votes), &quot;votes&quot;)
+            if task.get(&quot;status&quot;) == &quot;complete&quot;:
+                break
+
+asyncio.run(watch(&quot;task_3f9c6d2e&quot;))
+</code></pre>
+<hr />
+<p><a href="../02-schema/">← Previous: Schema</a> · <a href="../">Back to index</a> · <a href="../04-functions/">Next: Functions to write →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

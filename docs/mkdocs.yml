@@ -1,0 +1,27 @@
+site_name: Openarca.de
+theme:
+  name: material
+
+nav:
+
+- 📚 Index: index.md
+
+- 🎯 Openarca.de:
+  - Voting System:
+    - Overview: social-choice-voting/README.md
+    - 1. Concepts: social-choice-voting/01-concepts.md
+    - 2. Schema: social-choice-voting/02-schema.md
+    - 3. APIs: social-choice-voting/03-apis.md
+    - 4. Functions to write: social-choice-voting/04-functions.md
+    - 5. Messaging: social-choice-voting/05-messaging.md
+    - 6. Using from Python: social-choice-voting/06-using-from-python.md
+    - 7. Using in the agent SDK: social-choice-voting/07-using-in-agent-sdk.md
+  - Bidding System:
+    - Overview: bids-system/README.md
+    - 1. Concepts: bids-system/01-concepts.md
+    - 2. Schema: bids-system/02-schema.md
+    - 3. APIs: bids-system/03-apis.md
+    - 4. Functions to write: bids-system/04-functions.md
+    - 5. Delegate system: bids-system/05-delegate-system.md
+    - 6. Using the client library: bids-system/06-using-client-library.md
+    - 7. Using the client in the agent SDK: bids-system/07-using-client-in-agent-sdk.md
